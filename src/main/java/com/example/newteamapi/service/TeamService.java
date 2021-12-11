@@ -1,35 +1,35 @@
-package com.example.newmovieapi.service;
+package com.example.newteamapi.service;
 
-import com.example.newmovieapi.model.Movie;
-import com.example.newmovieapi.repository.MovieRepository;
+import com.example.newteamapi.model.Team;
+import com.example.newteamapi.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class MovieService {
+public class TeamService {
 
-    private final MovieRepository movieRepository;
+    private final TeamRepository teamRepository;
 
     @Autowired
-    public MovieService(MovieRepository movieRepository) {
-        this.movieRepository = movieRepository;
+    public TeamService(TeamRepository teamRepository) {
+        this.teamRepository = teamRepository;
     }
 
-    public List<Movie> getMovies() {
-        return movieRepository.findAll();
+    public List<Team> getTeams() {
+        return teamRepository.findAll();
     }
 
-    public Movie createMovie(Movie movie) {
-        return movieRepository.save(movie);
+    public Team createTeam(Team team) {
+        return teamRepository.save(team);
     }
 
-    public void deleteMovie(Integer id) {
-        movieRepository.deleteById(id);
+    public void deleteTeam(Integer id) {
+        teamRepository.deleteById(id);
     }
 
-    public Movie updateMovie(Movie movie) {
-        return movieRepository.save(movie);
+    public Team updateTeam(Team team) {
+        return teamRepository.save(team);
     }
 }
